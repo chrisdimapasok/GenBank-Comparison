@@ -1,58 +1,39 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Comparison_Template.html</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<style type="text/css">
-.s0 { color: #e8bf6a;}
-.s1 { color: #a9b7c6;}
-.s2 { color: #bababa;}
-.s3 { color: #a5c261;}
-</style>
+    <meta charset="UTF-8">
+    <title>Gene Coordinates Comparison : Gene Prediction Software</title>
 </head>
-<body bgcolor="#2b2b2b">
-<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
-<tr><td><center>
-<font face="Arial, Helvetica" color="#000000">
-Comparison_Template.html</font>
-</center></td></tr></table>
-<pre><span class="s0">&lt;!DOCTYPE </span><span class="s2">html</span><span class="s0">&gt;</span>
-<span class="s0">&lt;html </span><span class="s2">lang</span><span class="s3">=&quot;en&quot;</span><span class="s0">&gt;</span>
-<span class="s0">&lt;head&gt;</span>
-    <span class="s0">&lt;meta </span><span class="s2">charset</span><span class="s3">=&quot;UTF-8&quot;</span><span class="s0">&gt;</span>
-    <span class="s0">&lt;title&gt;</span><span class="s1">Gene Coordinates Comparison : Gene Prediction Software</span><span class="s0">&lt;/title&gt;</span>
-<span class="s0">&lt;/head&gt;</span>
-<span class="s0">&lt;body&gt;</span>
-<span class="s0">&lt;h1&gt;</span><span class="s1">Output</span><span class="s0">&lt;/h1&gt;</span>
-<span class="s0">&lt;hr/&gt;</span>
-<span class="s1">Number of Predictions: </span><span class="s0">&lt;strong&gt; </span><span class="s1">{{data[&quot;Count_Of_Pred&quot;]}}</span><span class="s0">&lt;/strong&gt; &lt;/br&gt;</span>
-<span class="s1">Number of Reference Annotations: </span><span class="s0">&lt;strong&gt;</span><span class="s1">{{data[&quot;Count_Of_Ref&quot;]}}</span><span class="s0">&lt;/strong&gt; &lt;/br&gt;</span>
+<body>
+<h1>Output</h1>
+<hr/>
+Number of Predictions: <strong> {{data["Count_Of_Pred"]}}</strong> </br>
+Number of Reference Annotations: <strong>{{data["Count_Of_Ref"]}}</strong> </br>
 
-<span class="s0">&lt;table </span><span class="s2">border</span><span class="s3">='1'</span><span class="s0">&gt;</span>
-    <span class="s0">&lt;thead&gt;</span>
-    <span class="s0">&lt;tr&gt;</span>
-        <span class="s0">&lt;th&gt;</span><span class="s1">Ref_5</span><span class="s0">&lt;/th&gt;</span>
-        <span class="s0">&lt;th&gt;</span><span class="s1">Ref_3</span><span class="s0">&lt;/th&gt;</span>
-        <span class="s0">&lt;th&gt;</span><span class="s1">Ref_ID</span><span class="s0">&lt;/th&gt;</span>
-        <span class="s0">&lt;th&gt;</span><span class="s1">Pred_5</span><span class="s0">&lt;/th&gt;</span>
-        <span class="s0">&lt;th&gt;</span><span class="s1">Pred_3</span><span class="s0">&lt;/th&gt;</span>
-    <span class="s0">&lt;/tr&gt;</span>
-    <span class="s0">&lt;/thead&gt;</span>
-    <span class="s0">&lt;tbody&gt;</span>
+<table border='1'>
+    <thead>
+    <tr>
+        <th>Ref_5</th>
+        <th>Ref_3</th>
+        <th>Ref_ID</th>
+        <th>Pred_5</th>
+        <th>Pred_3</th>
+    </tr>
+    </thead>
+    <tbody>
 
-    <span class="s1">{%for entry in data[&quot;entries&quot;] %}</span>
-    <span class="s0">&lt;tr&gt;</span>
-        <span class="s0">&lt;td </span><span class="s2">style</span><span class="s3">=&quot;text-align:center&quot;</span><span class="s0">&gt;</span><span class="s1">{{entry[&quot;Ref_5&quot;]}}</span><span class="s0">&lt;/td&gt;</span>
-        <span class="s0">&lt;td </span><span class="s2">style</span><span class="s3">=&quot;text-align:center&quot;</span><span class="s0">&gt;</span><span class="s1">{{entry[&quot;Ref_3&quot;]}}</span><span class="s0">&lt;/td&gt;</span>
-        <span class="s0">&lt;td </span><span class="s2">style</span><span class="s3">=&quot;text-align:center&quot;</span><span class="s0">&gt;</span><span class="s1">{{entry[&quot;Ref_ID&quot;]}}</span><span class="s0">&lt;/td&gt;</span>
-        <span class="s0">&lt;td </span><span class="s2">style</span><span class="s3">=&quot;text-align:center&quot;</span><span class="s0">&gt;</span><span class="s1">{{entry[&quot;Pred_5&quot;]}}</span><span class="s0">&lt;/td&gt;</span>
-        <span class="s0">&lt;td </span><span class="s2">style</span><span class="s3">=&quot;text-align:center&quot;</span><span class="s0">&gt;</span><span class="s1">{{entry[&quot;Pred_3&quot;]}}</span><span class="s0">&lt;/td&gt;</span>
-    <span class="s0">&lt;/tr&gt;</span>
-    <span class="s1">{% endfor %}</span>
+    {%for entry in data["entries"] %}
+    <tr>
+        <td style="text-align:center">{{entry["Ref_5"]}}</td>
+        <td style="text-align:center">{{entry["Ref_3"]}}</td>
+        <td style="text-align:center">{{entry["Ref_ID"]}}</td>
+        <td style="text-align:center">{{entry["Pred_5"]}}</td>
+        <td style="text-align:center">{{entry["Pred_3"]}}</td>
+    </tr>
+    {% endfor %}
    
-    <span class="s0">&lt;/tbody&gt;</span>
-<span class="s0">&lt;/table&gt;</span>
+    </tbody>
+</table>
 
-<span class="s0">&lt;/body&gt;</span>
-<span class="s0">&lt;/html&gt;</span></pre>
 </body>
 </html>
