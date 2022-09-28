@@ -62,7 +62,7 @@ for line in open("run1.predict"):
 
         if count < len(entries):
             entries[count]["Pred_5"] = pred_5
-            entries[count]["Pred_3"= pred_3
+            entries[count]["Pred_3"]= pred_3
 
         #Set Counter Variable
         count+=1
